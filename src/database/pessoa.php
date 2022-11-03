@@ -4,7 +4,7 @@ function findPessoaDb($conn, $id) {
     $id = mysqli_real_escape_string($conn, $id);
 	$pessoa;
 
-	$sql = "SELECT * FROM pessoas  WHERE id = ?";
+	$sql = "SELECT * FROM pessoas  WHERE id = ?;";
 	$stmt = mysqli_stmt_init($conn);
 
 	if(!mysqli_stmt_prepare($stmt, $sql))
@@ -26,13 +26,13 @@ function createPessoaDb($conn, $nome, $cpf, $email, $telefone) {
 	$telefone = mysqli_real_escape_string($conn,  $telefone);
 
 	if($nome && $cpf && $email && $telefone) {
-		$sql = "INSERT INTO pessoas (nome, cpf, email, phone) VALUES (?, ?, ?, ?)";
+		$sql = "INSERT INTO pessoas (nome, cpf, email, telefone) VALUES (?, ?, ?, ?)";
 		$stmt = mysqli_stmt_init($conn);
 
 		if(!mysqli_stmt_prepare($stmt, $sql)) 
 			exit('SQL error');
 		
-		mysqli_stmt_bind_param($stmt, 'sss', $nome, $cpf, $email, $phone);
+		mysqli_stmt_bind_param($stmt, 'sss', $nome, $cpf, $email, $telefone);
 		mysqli_stmt_execute($stmt);
 		mysqli_close($conn);
 		return true;
