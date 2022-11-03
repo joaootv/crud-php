@@ -32,7 +32,7 @@ function createPessoaDb($conn, $nome, $cpf, $email, $telefone) {
 		if(!mysqli_stmt_prepare($stmt, $sql)) 
 			exit('SQL error');
 		
-		mysqli_stmt_bind_param($stmt, 'sss', $nome, $cpf, $email, $telefone);
+		mysqli_stmt_bind_param($stmt, 'ssss', $nome, $cpf, $email, $telefone);
 		mysqli_stmt_execute($stmt);
 		mysqli_close($conn);
 		return true;
@@ -62,7 +62,7 @@ function updatePessoaDb($conn, $id, $nome, $cpf, $email, $telefone) {
 		if(!mysqli_stmt_prepare($stmt, $sql))
 			exit('SQL error');
 
-		mysqli_stmt_bind_param($stmt, 'sssi', $nome, $cpf, $email, $telefone, $id);
+		mysqli_stmt_bind_param($stmt, 'ssssi', $nome, $cpf, $email, $telefone, $id);
 		mysqli_stmt_execute($stmt);
 		mysqli_close($conn);
 		return true;
