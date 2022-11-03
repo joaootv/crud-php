@@ -1,1 +1,1 @@
-<?php header('location: src/pages/pessoas/read.php'); ?>
+<?php header('location: src/pages/pessoa/read.php'); ?>

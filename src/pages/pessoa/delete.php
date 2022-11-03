@@ -15,7 +15,7 @@ if(isset($_POST['id']))
     </div>
     <div class="row flex-center">
         <div class="form-div">
-            <form class="form" action="../../pages/user/delete.php" method="POST">
+            <form class="form" action="../../pages/pessoa/delete.php" method="POST">
                 <label>Deseja realmente deletar esta pessoa?</label>
                 <input type="hidden" name="id" value="<?=$_GET['id']?>" required/>
 

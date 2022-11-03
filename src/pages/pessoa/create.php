@@ -15,7 +15,7 @@ if (isset($_POST["nome"]) && isset($_POST["cpf"]) && isset($_POST["email"]) && i
     </div>
     <div class="row flex-center">
         <div class="form-div">
-            <form class="form" action="../../pages/user/create.php" method="POST">
+            <form class="form" action="../../pages/pessoa/create.php" method="POST">
                 <label>Nome Completo</label>
                 <input type="text" name="nome" required/>
                 <label>CPF</label>
